@@ -1,11 +1,9 @@
-package sample.Hash;
+package sample.Hash.Medium;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Hashtable;
-import java.nio.Buffer;
-import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
