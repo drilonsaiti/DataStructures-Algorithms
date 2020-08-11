@@ -14,13 +14,13 @@ public class DuplicateFileSystem {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
 
-        String [] cpdomains = new String[N];
+        String [] filepath = new String[N];
         for (int i = 0; i < N; i++){
-            cpdomains[i] = br.readLine();
+            filepath[i] = br.readLine();
         }
 
-        for (String domain : cpdomains) {
-            String [] fsinfo = domain.split("\\s+");
+        for (String path : filepath) {
+            String [] fsinfo = path.split("\\s+");
             String root = fsinfo[0];
             int ind = 0;
 
