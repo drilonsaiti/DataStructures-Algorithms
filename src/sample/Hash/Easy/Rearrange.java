@@ -20,7 +20,6 @@ public class Rearrange {
         int count = 0;
         for (int i = 0; i < N; i++){
             if (table.containsKey(array[i])){
-                System.out.println(table.get(array[i]));
                 finallArray[table.get(array[i])] = array[i];
                 count++;
             }else{

@@ -125,7 +125,6 @@ class SLL<E> {
         }
 
     }
-
     public SLLNode<E> getFirst() {
         return first;
     }

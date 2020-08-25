@@ -31,10 +31,8 @@ public class Subdomain {
                 counts.put(cur,counts.getOrDefault(cur,0) + count);
             }
         }
-        List<String> ans = new ArrayList<>();
         for (String dom : counts.keySet()){
-            ans.add("" + counts.get(dom) + " " + dom);
+            System.out.println("" + counts.get(dom) + " " + dom);
         }
-        System.out.println(ans);
     }
 }

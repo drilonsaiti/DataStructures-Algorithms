@@ -45,11 +45,15 @@ public class AddTwoNum {
             length2--;
             node2 = node2.succ;
         }
+
         StringBuilder sb = new StringBuilder();
+        //for Add Two Numbers
         String s = sb.append(number1+number2).reverse().toString();
+        //for Add Two Numbers II (without reverse())
+        //String s = sb.append(number1+number2).toString();
         String [] array = s.split("");
         list.deleteList();
-        SLL<Integer> results = new SLL<>();
+
         for (int i = 0; i < array.length;i++){
             list.insertLast(Integer.parseInt(array[i]));
         }

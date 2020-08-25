@@ -1,5 +1,9 @@
 package sample.Hash.Medium;
 
+import sample.Hash.CBHT;
+import sample.Hash.MapEntry;
+import sample.Hash.SLLNode;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -148,3 +152,71 @@ public class Apteka {
         }
     }
 }
+
+//second solution
+/*public class Apteka {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        CBHT<String, RepeatExercises.Hash.Apteka.Lek> table = new CBHT<String, RepeatExercises.Hash.Apteka.Lek>(2*n);
+        for (int i = 0; i < n; i++){
+            String [] array = br.readLine().split(" ");
+            table.insert(array[0].toUpperCase(),new RepeatExercises.Hash.Apteka.Lek(array[0],Integer.parseInt(array[1]),Integer.parseInt(array[2]),Integer.parseInt(array[3])));
+        }
+
+        while (true){
+            String line = br.readLine().toUpperCase();
+            if (line.equals("KRAJ"))
+                break;
+            int quantity = Integer.parseInt(br.readLine());
+            SLLNode<MapEntry<String,Lek>> node = table.search(line.toUpperCase());
+            if (node != null){
+                System.out.println(node.getElement().value);
+                if (quantity <= node.getElement().value.quantity){
+                    System.out.println("Napravena naracka");
+                    node.getElement().value.quantity -= quantity;
+                }else{
+                    System.out.println("Nema dovolno lekovi");
+                }
+            }else{
+                System.out.println("Nema takov lek");
+            }
+
+        }
+    }
+
+    static class Lek implements Comparable<RepeatExercises.Hash.Apteka.Lek>{
+        String name;
+        int bool;
+        int price;
+        int quantity;
+
+        public Lek(String name,int bool,int price,int quantity){
+            this.name = name;
+            this.bool = bool;
+            this.price = price;
+            this.quantity = quantity;
+        }
+        public String toString(){
+            String s = new String();
+
+            s += name + "\n";
+            if (bool == 1){
+                s+= "POZ\n";
+            }else{
+                s+= "NEG\n";
+            }
+            s+= price+"\n";
+            s+=quantity;
+            return s+"\n";
+        }
+
+        @Override
+        public int compareTo(Apteka.Lek o) {
+            return 0;
+        }
+    }
+
+
+}*/

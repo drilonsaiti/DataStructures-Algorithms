@@ -38,7 +38,7 @@ public class DuplicateFileSystem {
                 }
 
                 String str = full.substring(0,ind);
-                String text = full.substring(6,full.length()-1);
+                String text = full.substring(ind+1,full.length()-1);
                 if(str.contains("root/")){
                     str = "";
                     text = "";

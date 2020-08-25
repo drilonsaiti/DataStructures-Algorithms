@@ -1,11 +1,11 @@
 package sample.Hash;
 
-class MapEntry<K extends Comparable<K>,E> implements Comparable<K> {
+public class MapEntry<K extends Comparable<K>,E> implements Comparable<K> {
 
     // Each MapEntry object is a pair consisting of a key (a Comparable 
     // object) and a value (an arbitrary object).
-    K key;
-    E value;
+    public K key;
+    public E value;
 
     public MapEntry (K key, E val) {
         this.key = key;
@@ -21,5 +21,9 @@ class MapEntry<K extends Comparable<K>,E> implements Comparable<K> {
 
     public String toString () {
         return "<" + key + "," + value + ">";
+    }
+
+    public K key() {
+        return this.key;
     }
 }

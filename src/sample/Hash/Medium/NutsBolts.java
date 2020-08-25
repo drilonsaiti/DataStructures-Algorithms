@@ -63,6 +63,53 @@ public class NutsBolts {
         }else{
             System.out.println("Are Different");
         }
-
     }
+
+    //another solution
+   /* public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String[] nuts = br.readLine().split(" ");
+        String[] bolts = br.readLine().split(" ");
+        Arrays.sort(nuts);
+        Arrays.sort(bolts);
+        Hashtable<String, Integer> table = new Hashtable<>();
+
+        for (int i = 0; i < nuts.length; i++) {
+            if (!table.containsKey(nuts[i])) {
+                table.put(nuts[i], 1);
+            } else {
+                table.put(nuts[i], table.get(nuts[i]) + 1);
+            }
+        }
+        String different = "";
+        int flag = 0;
+        if (nuts.length == bolts.length) {
+            for (int i = 0; i < bolts.length; i++) {
+                if (table.containsKey(bolts[i])){
+                    flag = 1;
+                }else{
+                    flag = 0;
+                    different += bolts[i] + " ";
+                    break;
+                }
+            }
+        }else{
+            System.out.println("Are different because of length");
+        }
+        Arrays.sort(nuts);
+        Arrays.sort(bolts);
+        if (flag == 1){
+            for (int i = 0; i < nuts.length;i++){
+                System.out.print(nuts[i] + " ");
+            }
+            System.out.println();
+            for (int i = 0; i < bolts.length; i++){
+                System.out.print(bolts[i] + " ");
+            }
+        }else{
+            System.out.println("Are different because of this " + different );
+        }
+
+    }*/
 }

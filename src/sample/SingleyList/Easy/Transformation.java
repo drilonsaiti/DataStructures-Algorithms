@@ -27,14 +27,13 @@ public class Transformation {
         SLLNode<Integer> node = list.getFirst();
 
 
-        while (node != null && node.element != x) {
+        while (node != null && node.element <= x) {
             node=node.succ;
         }
-        //System.out.println(node.element);
 
         SLLNode<Integer> node2 = node;
         while(node2 != null){
-            if(node2.element < x){
+            if(node2.element <= x){
                 list.insertBefore(node2.element,node);
                 list.delete(node2);
             }

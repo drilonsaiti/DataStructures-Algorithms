@@ -25,31 +25,21 @@ public class Segregate {
 
     public static SLL<Integer> segregate(SLL<Integer> list){
         SLLNode<Integer> node = list.getFirst();
-        int middle = 0;
-        int length = list.length()/2;
-        int fullLength = list.length();
-        System.out.println("Length " + length);
-        if((fullLength % 2 ) == 0){
-            middle = length - 1;
-        }else{
-            middle = length-1;
-        }
-        System.out.println(middle);
-        int count = 0;
-        SLL<Integer> results = new SLL<Integer>();
+        SLLNode<Integer> index = null;
+        int tmp;
+
         while (node != null){
-            if(count == 0 || count < middle){
-                results.insertLast(0);
-                count++;
-            }else if((count == middle ) && count != 0){
-                results.insertLast(1);
-                count++;
-            }else{
-                results.insertLast(2);
-                count++;
+            index = node.succ;
+            while (index != null){
+                if (index.element < node.element){
+                    tmp = node.element;
+                    node.element = index.element;
+                    index.element = tmp;
+                }
+                index = index.succ;
             }
             node = node.succ;
         }
-        return results;
+        return list;
     }
 }

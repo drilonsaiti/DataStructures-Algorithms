@@ -29,9 +29,12 @@ public class Consecutive {
         int j = array.length-1;
         int k = 1;
         int [] results = new int[N];
+        int count = 0;
         for (Map.Entry<Integer, Integer> x : table.entrySet()){
+            //System.out.println(count++ + " " + x.getKey() + " " + x.getValue());
             if(j-1 > 0) {
                 if (x.getKey() - array[j - 1] == 1) {
+                    System.out.println(x.getKey() + " " + array[j-1]);
                     results[k++] = x.getKey();
                 }
                 j--;

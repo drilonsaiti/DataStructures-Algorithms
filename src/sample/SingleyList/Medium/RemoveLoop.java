@@ -15,36 +15,31 @@ public class RemoveLoop {
             sll.insertLast(Integer.parseInt(pomNiza[i]));
         }
         int k = Integer.parseInt(br.readLine());
-        remove(sll, k);
-        System.out.println(sll);
+
+        System.out.println(remove(sll, k));
     }
 
-    public static void remove(SLL<Integer> list,int x){
+    public static int remove(SLL<Integer> list,int x){
         SLLNode<Integer> node = list.getFirst();
-        int length = list.length();
         int count = 0;
 
-        int flag = 0;
-        while (node != null){
+        while (node != null ){
             if (x != 0){
                 if(count >= x){
                     list.delete(node);
-                    flag = 1;
                 }else{
                     count++;
                 }
             }else{
-                node.succ = null;
-                flag = 1;
+                list.deleteList();
             }
             node = node.succ;
         }
 
         if(list.length() > 0){
-            flag = 1;
+            return 1;
         }else {
-            flag = 0;
+            return 0;
         }
-        System.out.println(flag);
     }
 }

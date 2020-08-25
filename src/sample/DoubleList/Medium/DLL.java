@@ -172,4 +172,7 @@ public class DLL<E> {
 	public void setFirst(DLLNode<E> node) {
 		this.first=node;
 	}
+	public void setLast(DLLNode<E> node) {
+		this.last = node;
+	}
 }

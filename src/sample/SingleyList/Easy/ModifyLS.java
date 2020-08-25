@@ -26,29 +26,29 @@ public class ModifyLS {
 
     public static SLL<Integer> modify(SLL<Integer> list, SLLNode<Integer> list2){
 
-       SLLNode<Integer> node = list.getFirst();
-       SLLNode<Integer> reverse = list2;
+        SLLNode<Integer> node = list.getFirst();
+        SLLNode<Integer> reverse = list2;
 
 
         int length = list.length()/2;
         int count = 0;
 
 
-       while (node != null && reverse != null) {
-           if (count < length) {
-               list.insertBefore(reverse.element-node.element,node);
-               list.delete(node);
-               count++;
-               node = node.succ;
-               reverse = reverse.succ;
-           }else{
-               list.insertBefore(reverse.element,node);
-               list.delete(node);
-               reverse = reverse.succ;
-               node = node.succ;
-           }
+        while (node != null && reverse != null) {
+            if (count < length) {
+                list.insertBefore(reverse.element-node.element,node);
+                list.delete(node);
+                count++;
+                node = node.succ;
+                reverse = reverse.succ;
+            }else{
+                list.insertBefore(reverse.element,node);
+                list.delete(node);
+                reverse = reverse.succ;
+                node = node.succ;
+            }
         }
-       return list;
+        return list;
     }
     public static SLLNode<Integer> reverse(SLL<Integer> list){
 

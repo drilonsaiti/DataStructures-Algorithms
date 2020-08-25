@@ -23,7 +23,7 @@ public class NonRepeating {
         int key = 0;
         for (Map.Entry<Integer, Integer> x : table.entrySet()){
             System.out.println(x.getKey() + " " + x.getValue());
-            if(min > x.getValue()){
+            if(min >= x.getValue()){
                 min = x.getValue();
                 key = x.getKey();
                 //System.out.println(key);

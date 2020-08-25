@@ -15,15 +15,7 @@ public class ReverseGroup {
             sll.insertLast(Integer.parseInt(pomNiza[i]));
         }
         int k = Integer.parseInt(br.readLine());
-        SLLNode<Integer> node = sll.getFirst();
-        SLLNode<Integer> finalNode = reverse(node, k);
-       while (finalNode != null){
-            System.out.print(finalNode.element + " ");
-            finalNode = finalNode.succ;
-        }
-
-
-
+        reverse(sll.getFirst(),k);
     }
 
     public static SLLNode<Integer> reverse(SLLNode<Integer> list,int k){
@@ -31,10 +23,8 @@ public class ReverseGroup {
         SLLNode<Integer> prev = null,next = null;
         int count = 0;
 
-        while (node != null && count < k){
-            if(count >= k){
+        while (count < k && node != null ){
 
-            }
             next = node.succ;
             node.succ = prev;
             prev = node;
@@ -45,6 +35,7 @@ public class ReverseGroup {
         if(next != null){
             node.succ = reverse(next,k);
         }
+
         return prev;
     }
 

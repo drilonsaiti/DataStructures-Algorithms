@@ -14,11 +14,11 @@ public class SmallerLeft {
             first[i] = scanner.nextInt();
                 table.put(i,first[i]);
         }
-        HashSet<Integer> hashSet = new HashSet<>();
+
         Hashtable<Integer,Integer> results = new Hashtable<>();
         int count = 0;
         for (int i = 0; i < N; i++){
-            int num = table.get(i);
+
             if(i-1 >= 0) {
                 if (table.get(i-1) < table.get(i)) {
                     results.put(count,table.get(i-1));

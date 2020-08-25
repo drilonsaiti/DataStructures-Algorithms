@@ -8,7 +8,12 @@ public class SLLNode<E> {
 		this.element = elem;
 		this.succ = succ;
 	}
-
+	public E getElement(){
+		return this.element;
+	}
+	public SLLNode<E> getSucc(){
+		return this.succ;
+	}
 	@Override
 	public String toString() {
 		return element.toString();

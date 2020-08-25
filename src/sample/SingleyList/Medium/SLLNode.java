@@ -9,10 +9,13 @@ class SLLNode<E> {
         this.succ = succ;
     }
 
-    public SLLNode(E i) {
-        this.element = i;
+    public SLLNode() {
+        this.succ = null;
     }
-
+    public SLLNode(E element) {
+        this.element = element;
+        this.succ = null;
+    }
     @Override
     public String toString() {
         return element.toString();
