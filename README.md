@@ -1,2 +1,2 @@
 # DataStructures-Algorithms
-#Exercises for Data Structures and Algorithms from GeekforGeeks and leetcode.
+# Exercises for Data Structures and Algorithms from GeeksforGeeks and leetcode.
